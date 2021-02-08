@@ -1,0 +1,18 @@
+<h1>User Show Page</h1>
+
+<% if flash[:message] %>
+    <%= flash[:message] %><br><br>
+<% end %>
+
+Name: <%= @user.name %><br>
+<% if @user.admin %>
+    ADMIN <br>
+<% else %>
+    Tickets: <%= @user.tickets %><br>
+    Mood: <%= @user.mood %><br>
+    Height: <%= @user.height %> inches<br>
+<% end %>
+
+<%= link_to "See attractions", attractions_path %><br><br>
+
+<%= link_to "Log Out", "/logout" %>
